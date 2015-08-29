@@ -6,15 +6,17 @@
 
 * proof (証明)
 ***
-##### linear algebra (線形代数)
+* linear algebra (線形代数)
 * mapping&matrix (写像&行列)
 * vektor
+* sparse modeling
+
 ***
 * 順列,組み合わせ
 * probability (確率)
 * function (関数)
-* ベクトルと行列,行列式  
 * 順列,組み合わせ  
 * 統計  
 * 微分,積分,微分方程式
+
 ***
