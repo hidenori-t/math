@@ -6,9 +6,11 @@
 
 * proof (証明)
 ***
-* linear algebra (線形代数)
-* mapping&matrix (写像&行列)
-* vektor
+# linear algebra (線形代数)
+    * mapping & matrix (写像&行列)
+    * vektor
+
+
 * sparse modeling
 
 ***
@@ -17,6 +19,5 @@
 * function (関数)
 * 順列,組み合わせ  
 * 統計  
-* 微分,積分,微分方程式
-
-***
+* calculus (微積分学)
+* 微分方程式
