@@ -19,6 +19,7 @@
 
 # calculus (微分積分学)
     * inverse function (逆関数)
+    * inverse trigonometric function (逆三角関数)
     * partial derivative (偏微分)
     * 微分方程式
 
