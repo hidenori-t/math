@@ -1,13 +1,13 @@
 # math
 ***
-* set (集合)  
-* logic (論理)
+* set
+* logic
 * Gödelscher Unvollständigkeitssatz
 
-* proof (証明)
+* proof
 ***
 # linear algebra (線形代数学)
-    * mapping & matrix (写像&行列)
+    * mapping & matrix (写像 & 行列)
     * vektor
 
 ***
