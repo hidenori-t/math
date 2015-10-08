@@ -2,6 +2,7 @@
 ***
 * set
 * logic
+    * predicate logic
 * Gödelscher Unvollständigkeitssatz
 
 * proof
@@ -15,7 +16,7 @@
 * probability (確率)
 * 統計  
 
-* function (関数)
+* function
     * 整関数
     * 分数関数
     * 無理関数
