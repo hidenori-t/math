@@ -1,11 +1,12 @@
 # math
 ***
-* set
 * logic
-    * predicate logic
+    * propositional logic (命題論理)
+    * classical logic (古典論理)
+    * predicate logic (述語論理)
 * Gödelscher Unvollständigkeitssatz
-
 * proof
+* set
 ***
 # linear algebra (線形代数学)
     * mapping & matrix (写像 & 行列)
