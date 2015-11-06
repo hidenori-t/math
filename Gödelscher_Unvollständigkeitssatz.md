@@ -1,4 +1,4 @@
-# Gödelscher Unvollständigkeitssatz
+# Gödelscher Unvollständigkeitssatz (Gödel's Incompleteness Theorems)
 
 理論に矛盾が無くても,その理論で全ての問題を証明できる保証は無い　ということ
 単純化すると,
