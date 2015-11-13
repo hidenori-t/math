@@ -15,7 +15,7 @@
 ***
 * 順列,組み合わせ
 * probability (確率)
-* 統計  
+* statistics (統計)  
 
 * function
     * 整関数
