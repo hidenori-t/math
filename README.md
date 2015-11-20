@@ -1,4 +1,4 @@
-# math
+# The main branches of mathematics
 ***
 * logic
     * propositional logic (命題論理)
