@@ -202,14 +202,13 @@ $$ y = \frac{af-ce}{ad-bc} $$
 ### 行列式 (determinant)
 ***
 行列
-$ A =
+$A =
 \left(
     \begin{array}{cc}
       a & b  \\
       c & d  \\
     \end{array}
-\right)
-$
+\right)$
 に対して
 
 $$
