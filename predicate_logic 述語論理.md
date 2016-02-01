@@ -121,10 +121,61 @@ $P\theta = Q\theta$ のとき, 以下の推論規則が成立. つまり以下�
 $$ \frac{ \Delta \rightarrow \Gamma, P ~~~ Q, \Lambda \rightarrow \Theta}{\Delta \theta, \Lambda \theta \rightarrow \Gamma \theta, \Theta \theta} $$
 ***
 ### 参考文献
-現代論理学入門より
+2) 沢田充茂:『[現代論理学入門](http://amzn.to/1KpdK1i)』岩波書店, 1962.
 # 述語論理 (predicate logic) 学
 p113  
 構造を明らかにしたうえで,文と文との結びつきを明らかにしその妥当性を決定したり,新たなトートロジーの導出をおこなったりするのが前節の命題論理(propositional logic) 学と区別して述語論理 (predicate logic) 学と呼ばれている.
+
+p116  
+「人間は動物である」の関係を表すのに
+$$ 動物(人間)$$
+と表示する. そしてこれを記号化して
+$$ F(a), Fa$$
+と言うように書く. こうすれば  
+'a'の位置にくる語(名詞、代名詞等)は主語  
+'F'の位置にくる語(名詞、形容詞、動詞等)は述語  
+を表すことになる.  
+これらの文の形式を **命題関数** と呼ぶ.  
+
+p120 量化  
+すべての人間は正直である  
+= すべてのxについて(xが人間である ならば xは正直である)
+$$= \forall x(Fx \rightarrow Gx)$$  
+
+ある人間は正直である  
+= あるxが存在し(xは人間であり そして xは正直である)
+$$= \exists x(Fx \land Gx)$$
+
+p131  
+* 反対関係
+$$\forall x \neg Fx \rightarrow \neg \forall x Fx$$
+すべてxはFではない(E)全称否定 ならば すべてのxはFである(A)全称肯定 でない
+
+* 小反対関係  
+$$ \neg \exists x Fx \rightarrow \exists x \neg Fx $$
+あるxはFである(I)特殊肯定 でない ならば あるxはFでない(O)特殊否定
+
+* 矛盾関係  
+$$ \neg \forall x Fx \equiv \exists x \neg Fx $$
+すべてのxはFである(A)全称肯定 でない $\equiv$ あるxはFでない(O)特殊否定
+
+$$ \neg \forall x \neg Fx \equiv \exists x Fx $$
+すべてxはFではない(E)全称否定 でない $\equiv$ あるxはFである(I)特殊肯定
+
+* 大小関係
+$$\forall x Fx \rightarrow \exists x Fx $$
+すべてのxはFである(A)全称肯定 ならば あるxはFである(I)特殊肯定
+
+$$\forall x \neg Fx \rightarrow \exists x \neg Fx $$
+すべてxはFではない(E)全称否定 ならば あるxはFでない(O)特殊否定
+
+p134
+# 伝統的論理学  
+日常言語の表現およびそれを前提としている  
+主語が指すようなものが必ず存在しているということを前提
+# 現代の論理学
+日常言語の表現をより基本的な論理構造から構成し解釈しようとする  
+主語が指しているようなものが存在しない、すなわち主語に当る基本文が偽である場合の可能性を考慮して理論を組み立てている
 
 p197  
 同一率
