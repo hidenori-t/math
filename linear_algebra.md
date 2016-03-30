@@ -77,9 +77,8 @@ Definition
 
 ## 1.5
 ## 転置行列 (transposed matrix)
-$A^{\mathrm{T}}$ や
-${}^t\!A$
-で表す.
+$A^{\mathrm{T}}, A^{T}, {}^t\!A$
+等さまざまな表現があり, $A$ トランスポーズ, $A$ 転置 と発音される.
 
 ## 2次対角行列
 $
