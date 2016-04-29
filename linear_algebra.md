@@ -22,7 +22,7 @@ $A=(a_{ij}),B=(b_{ij})$ をともに $m \times n$行列とするとき，
 $A+B=(a_{ij}+b_{ij})$ である.  
 ただし,違う型の行列どうしの和は定義しない.
 
-## scalar multiplication (スカラー倍)
+## スカラー倍(scalar multiplication)
 
 行列 $A$ と数 (scalar) $k$について各成分の$k$倍を成分とする行列を行列$A$の$k$倍と呼び $kA$で表す.  
 すなわち，
@@ -207,10 +207,158 @@ $  (単位行列)
 の形の行列を2次の階段行列と呼ぶ.  
 ゼロ行列$O$も単位行列も,階段行列の一種.
 
-## クラメルの公式
+## クラメールの公式 (Cramer's rule)
+これを使えば方程式を解ける．  
+2行2列の次のような方程式の場合  
 
-$$ x = \frac{de-bf}{ad-bc},$$
-$$ y = \frac{af-ce}{ad-bc} $$
+$$
+\left(
+    \begin{array}{cc}
+      a & b  \\
+      c & d  \\
+    \end{array}
+  \right)
+
+\begin{pmatrix} x \\ y \end{pmatrix}
+=
+\begin{pmatrix} e \\ f \end{pmatrix}
+$$
+
+$$
+x = \frac{de-bf}{ad-bc}
+=
+\frac{
+\begin{vmatrix}
+e & b \\
+f & d
+\end{vmatrix}
+}
+{|A|}
+$$
+
+$$
+y = \frac{af-ce}{ad-bc}
+=
+\frac{
+\begin{vmatrix}
+a & e \\
+c & f
+\end{vmatrix}
+}
+{|A|}
+$$
+3行3列の次のような方程式の場合
+
+$$
+A
+=
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+
+\begin{pmatrix} x_{1} \\ x_{2} \\ x_{3} \end{pmatrix}
+=
+\begin{pmatrix} b_{1} \\ b_{2} \\ b_{3} \end{pmatrix}
+$$
+
+分母は行列 $A$ の行列式で，  
+分子は行列 $A$ の行列式の列を1列ずつ列ベクトル $b$ の成分に置き換えると解が求まる．  
+以下の3つがそれぞれ $x_{1}, x_{2}, x_{3}$ の解になる．
+
+$$
+x_{1}
+=
+\frac{
+  \begin{vmatrix}
+  b_{1} & a_{12} & a_{13} \\
+  b_{2} & a_{22} & a_{23} \\
+  b_{3} & a_{32} & a_{33}
+  \end{vmatrix}
+}
+{|A|}
+=
+\frac{
+  \begin{vmatrix}
+  b_{1} & a_{12} & a_{13} \\
+  b_{2} & a_{22} & a_{23} \\
+  b_{3} & a_{32} & a_{33}
+  \end{vmatrix}
+}
+{
+  \begin{vmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+  \end{vmatrix}
+}
+$$
+
+
+$$
+x_{2}
+=
+\frac{
+  \begin{vmatrix}
+  a_{11} & b_{1} & a_{13} \\
+  a_{21} & b_{2} & a_{23} \\
+  a_{31} & b_{3} & a_{33}
+  \end{vmatrix}
+}
+{|A|}
+=
+\frac{
+  \begin{vmatrix}
+  a_{11} & b_{1} & a_{13} \\
+  a_{21} & b_{2} & a_{23} \\
+  a_{31} & b_{3} & a_{33}
+  \end{vmatrix}
+}
+{
+  \begin{vmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+  \end{vmatrix}
+}
+$$
+
+$$
+x_{3}
+=
+\frac{
+  \begin{vmatrix}
+  a_{11} & a_{12} & b_{1} \\
+  a_{21} & a_{22} & b_{2} \\
+  a_{31} & a_{32} & b_{3}
+  \end{vmatrix}
+}
+{|A|}
+=
+\frac{
+  \begin{vmatrix}
+  a_{11} & a_{12} & b_{1} \\
+  a_{21} & a_{22} & b_{2} \\
+  a_{31} & a_{32} & b_{3}
+  \end{vmatrix}
+}
+{
+  \begin{vmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+  \end{vmatrix}
+}
+$$
 
 ### 行列式 (determinant)
 
