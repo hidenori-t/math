@@ -146,12 +146,11 @@ $$
     \end{array}
   \right)
 $$
-は対称行列である．
+は$2$ 次対称行列である．
 
 ## 2次交代行列
-2次正方行列 $\mathbf{A}$ が $\mathbf{A}^{\top}  = \mathbf{-A}$ を満たすとき，  
+$2$ 次正方行列 $\mathbf{A}$ が $\mathbf{A}^{\top}  = \mathbf{-A}$ を満たすとき，  
 $\mathbf{A}$ を $2$ 次交代行列と呼ぶ．  
-成分で表すと，
 $$
 \left(
     \begin{array}{cc}
@@ -159,15 +158,40 @@ $$
       c & d  \\
     \end{array}
   \right)
-=
+$$   
+が $2$ 次交代行列であることは  
+対角成分 $a,d$は $0$ かつ $b = -c$ が成り立つことであり,
+
+$$
 \left(
     \begin{array}{cc}
-      -a & -c  \\
-      -b & -d  \\
+      0 & b  \\
+      -b & 0  \\
     \end{array}
   \right)
 $$
 
+の形をした行列である．  
+例えば,
+$$
+\left(
+    \begin{array}{cc}
+      0 & 2  \\
+      -2 & 0  \\
+    \end{array}
+  \right)
+$$
+や
+$$
+\left(
+    \begin{array}{cc}
+      0 & -5  \\
+      5 & 0  \\
+    \end{array}
+  \right)
+$$
+
+は $2$ 次交代行列である．
 ## 1.6
 ## 階段行列
 ## 行基本変形
@@ -487,9 +511,6 @@ $$ x\cos α + y\sin α = p (p \leq 0)$$
 
 ## 命題 2.2.1
 $e$ の単位ベクトル
-
-
-
 ***
 ### 以下，参考文献
 1) :『量子コンピュータが本当にすごい』，2015．
@@ -512,4 +533,175 @@ $e$ の単位ベクトル
 $ad-bc \neq 0$ではないとダメ  
 行列に掛けると,単位行列という特殊な行列になる.
 
+以下  
+http://qiita.com/nognog/items/f6b6e64792ae1f8ac20c
+# 基底
+$e_1=(1,0)^t,e_2=(0,1)^t$ という２つのベクトルの組は2次元の基底
+
+$$
+{\begin{align}
+\left(
+\begin{matrix}
+3\\\
+5
+\end{matrix}
+\right)
+&=3
+\left(
+\begin{matrix}
+1\\\
+0
+\end{matrix}
+\right)
++5
+\left(
+\begin{matrix}
+0\\\
+1
+\end{matrix}
+\right)\\\
+&=
+3 \mathbf{e}_1 + 5 \mathbf{e}_2
+\end{align}
+}
+$$
+
+同様に、平面上の任意の点 $(x,y)$ は以下のように表すことができます。
+
+$$
+{\begin{align}
+\left(
+\begin{matrix}
+x\\\
+y
+\end{matrix}
+\right)
+&=x
+\left(
+\begin{matrix}
+1\\\
+0
+\end{matrix}
+\right)
++y
+\left(
+\begin{matrix}
+0\\\
+1
+\end{matrix}
+\right)\\\
+&=
+x \mathbf{e}_1 + y \mathbf{e}_2
+\end{align}
+}
+$$
+
+# ベクトル同士の積=ベクトルの内積  
+ベクトルは掛け算が定義されず、掛け算に相当するものとして内積が定義  
+$n$ 次元ベクトル
+
+$$
+{\mathbf{a}=
+\left(
+\begin{matrix}
+a_1 \\\
+a_2 \\\
+\vdots \\\
+a_n
+\end{matrix}
+\right)
+}
+$$
+$$
+{\mathbf{b}=
+\left(
+\begin{matrix}
+b_1 \\\
+b_2 \\\
+\vdots \\\
+b_n
+\end{matrix}
+\right)
+}
+$$
+
+の内積は，以下の通り定義されます．
+
+$$
+{\begin{align}
+\mathbf{a}^t \cdot \mathbf{b} & =
+\left(
+\begin{matrix}
+a_1 & a_2 & \cdots & a_n
+\end{matrix}
+\right) \cdot
+\left(
+\begin{matrix}
+b_1 \\\
+b_2 \\\
+\vdots \\\
+b_n
+\end{matrix}
+\right) \\\
+& = a_1 b_1 + a_2 b_2 + \cdots + a_n b_n
+\end{align}
+}
+$$
+
+* 大学以降の数学では、内積はサイズの等しい横ベクトルと縦ベクトルの間で、「横ベクトル ⋅⋅ 縦ベクトル」として定義されるということ  
+（順番も重要 必ず横ベクトルが左）  
+計算としては中の成分同士の掛け算の総和なので、順番なんかどっちでも同じではないかと思うかもしれませんが、  
+以下のような計算は定義されないので注意  
+（このような定義をしてしまうと、この後に出てくる行列の計算が定義できなくなってしまうため、内積は横ベクトルと縦ベクトルについて定義されています。**ベクトルや行列の計算では、縦・横のサイズを気にすることは非常に重要**）
+* 内積は次元のない普通の数(scalar）であることにも注意．  
+**ベクトルや行列の計算では、結果の縦・横のサイズを気にすることも非常に重要**
+
+$$
+{\left(
+\begin{matrix}
+a_1 \\\
+a_2 \\\
+\vdots \\\
+a_n
+\end{matrix}
+\right)
+\cdot
+
+\left(
+\begin{matrix}
+b_1 \\\
+b_2 \\\
+\vdots \\\
+b_n
+\end{matrix}
+\right)
+ →　定義できない
+}
+$$
+
+* 内積の例：  
+$\mathbf{a}^t=(1,2,3,4)$  
+$\mathbf{b}^t=(5, 6, 7, 8)$
+
+$$
+{\begin{align}
+\mathbf{a}^t \cdot \mathbf{b} & =
+\left(
+\begin{matrix}
+1 & 2 & 3 & 4
+\end{matrix}
+\right) \cdot
+\left(
+\begin{matrix}
+5 \\\
+6 \\\
+7 \\\
+8
+\end{matrix}
+\right) \\\
+&= 1 \times 5 + 2 \times 6 + 3 \times 7 + 4 \times 8 \\
+&= 80
+\end{align}
+}
+$$
 # 随時更新していきます:octocat:
