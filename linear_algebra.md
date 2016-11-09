@@ -69,6 +69,7 @@ $$
       0 & 1  \\
     \end{array}
   \right)
+= diag \ (1, 1)
 $$
 
 $n$ 次の単位行列
@@ -82,6 +83,7 @@ $n$ 次の単位行列
       0 & 0 & \ldots & 1
     \end{array}
   \right)
+= diag \ (1,\ldots ,1)
 \]
 
 また,零行列 $\mathbf{O}$ に対しては，$\mathbf{AO = AO = O}$ が成り立つ．
