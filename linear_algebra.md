@@ -262,6 +262,223 @@ $$
 の形の行列を $2$ 次の階段行列と呼ぶ．  
 ゼロ行列 $\mathbf{O}$ も単位行列も,階段行列の一種．
 
+# ブロック行列(block matrix)
+## 定義と性質
+行列の縦横に区切りを入れ，各区域を小さな行列と見なしたもの
+
+$$A=\begin{eqnarray}
+\left(
+  \begin{array}{cc|cc}
+    a & b & 0 & 0 \\
+    c & d & 0 & 0 \\
+    \hline
+    x & y & 1 & 0 \\
+    z & w & 0 & 1 \\
+  \end{array}
+\right)
+=
+\left( \begin{matrix} A_{11}& A_{12}\\ A_{21}& A_{22}\end{matrix} \right)
+\end{eqnarray}$$
+
+ブロック行列の足し算  
+例:
+
+$$\begin{eqnarray}
+\left(
+  \begin{array}{cc|cc}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    \hline
+    3 & 1 & 1 & 0 \\
+    4 & 1 & 0 & 1 \\
+  \end{array}
+\right)
++
+\left(
+  \begin{array}{cc|cc}
+    5 & 9 & 5 & 3 \\
+    2 & 6 & 5 & 8 \\
+    \hline
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+  \end{array}
+\right)
+=
+\left(
+  \begin{array}{cc|cc}
+    6 & 9 & 5 & 3 \\
+    2 & 7 & 5 & 8 \\
+    \hline
+    3 & 1 & 2 & 0 \\
+    4 & 1 & 0 & 2 \\
+  \end{array}
+\right)
+\end{eqnarray}$$
+
+ブロック行列の定数倍
+
+$$
+c\left( \begin{matrix} A_{11} & \ldots &  A_{1n}\\
+  \vdots && \vdots \\
+  A_{m1} & \ldots & A_{mn}
+  \end{matrix} \right)
+=
+\left( \begin{matrix} cA_{11} & \ldots &  cA_{1n}\\
+  \vdots && \vdots \\
+  cA_{m1} & \ldots & cA_{mn}
+  \end{matrix} \right)
+$$
+
+$A_{ij},\ B_{ij}$ が数であるかのように計算してよいということ
+
+ブロック行列の積
+
+$$
+\left(
+  \begin{matrix} B_{11} & \ldots &  B_{1m}\\
+  \vdots && \vdots \\
+  B_{k1} & \ldots & B_{km}
+  \end{matrix}
+\right)
+\left(
+  \begin{matrix} A_{11} & \ldots &  A_{1n}\\
+  \vdots && \vdots \\
+  A_{m1} & \ldots & A_{mn}
+  \end{matrix}
+\right)
+=
+\left(
+  \begin{matrix}
+  (B_{11}A_{11}+\ldots +B_{1m}A_{m1})& \ldots & (B_{11}A_{1n}+\ldots +B_{1m}A_{mn})\\
+  \vdots && \vdots \\
+  (B_{k1}A_{11}+\ldots +B_{km}A_{m1})& \ldots & (B_{k1}A_{11}+\ldots +B_{km}A_{mn})
+\end{matrix}
+\right)$$
+
+例:
+
+$$\begin{eqnarray}
+\left(
+  \begin{array}{cc|cc}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    \hline
+    3 & 1 & 1 & 0 \\
+    4 & 1 & 0 & 1 \\
+  \end{array}
+\right)
+\left(
+  \begin{array}{cc|cc}
+    5 & 9 & 5 & 3 \\
+    2 & 6 & 5 & 8 \\
+    \hline
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+  \end{array}
+\right)
+&=&
+
+\left(\begin{array}{c|c}
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 5& 9\\ 2& 6\end{matrix} \right)
+    +
+    \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right) \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right)
+    &
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 5& 3\\ 5& 8\end{matrix} \right)
+    +
+    \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right) \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right)
+    \\
+    \hline
+    \left( \begin{matrix} 3& 1\\ 4& 1\end{matrix} \right) \left( \begin{matrix} 5& 9\\ 2& 6\end{matrix} \right)
+    +
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right)
+    &
+    \left( \begin{matrix} 3& 1\\ 4& 1\end{matrix} \right) \left( \begin{matrix} 5& 3\\ 5& 8\end{matrix} \right)
+    +
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right)
+    \end{array}\right)\\
+&=&
+\left(\begin{array}{c|c}
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 5& 9\\ 2& 6\end{matrix} \right)
+    +
+    \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right)
+    &
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 5& 3\\ 5& 8\end{matrix} \right)
+    +
+    \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right)
+    \\
+    \hline
+    \left( \begin{matrix} 3& 1\\ 4& 1\end{matrix} \right) \left( \begin{matrix} 5& 9\\ 2& 6\end{matrix} \right)
+    +
+    \left( \begin{matrix} 0& 0\\ 0& 0\end{matrix} \right)
+    &
+    \left( \begin{matrix} 3& 1\\ 4& 1\end{matrix} \right) \left( \begin{matrix} 5& 3\\ 5& 8\end{matrix} \right)
+    +
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right)
+    \end{array}\right)\\
+&=&
+\left(\begin{array}{c|c}
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 5& 9\\ 2& 6\end{matrix} \right)
+
+    &
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 5& 3\\ 5& 8\end{matrix} \right)
+
+    \\
+    \hline
+    \left( \begin{matrix} 3& 1\\ 4& 1\end{matrix} \right) \left( \begin{matrix} 5& 9\\ 2& 6\end{matrix} \right)
+
+    &
+    \left( \begin{matrix} 3& 1\\ 4& 1\end{matrix} \right) \left( \begin{matrix} 5& 3\\ 5& 8\end{matrix} \right)
+    +
+    \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right) \left( \begin{matrix} 1& 0\\ 0& 1\end{matrix} \right)
+    \end{array}\right)\\
+&=&
+\left(\begin{array}{c|c}
+    \begin{matrix} 1\cdot 5 +0\cdot 2 & 1\cdot 9 +0\cdot 6\\ 0\cdot 5 + 1\cdot 2 & 0\cdot 9 +1\cdot 6\end{matrix}
+    &
+    \begin{matrix} 1\cdot 5 +0\cdot 5 & 1\cdot 3 +0\cdot 8\\ 0\cdot 5 + 1\cdot 5 & 0\cdot 3 +1\cdot 8\end{matrix}
+
+    \\
+    \hline
+    \begin{matrix} 3\cdot 5 +1\cdot 2 & 3\cdot 9 +1\cdot 6\\ 4\cdot 5 + 1\cdot 2 & 4\cdot 9 +1\cdot 6\end{matrix}
+    &
+    \left(
+      \begin{matrix} 3\cdot 5 +1\cdot 5 & 3\cdot 3 +1\cdot 8\\ 4\cdot 5 + 1\cdot 5 & 4\cdot 3 +1\cdot 8\end{matrix}
+    \right)
+    +
+    \left(
+      \begin{matrix} 1\cdot 1 +0\cdot 0 & 1\cdot 0 +0\cdot 1\\ 0\cdot 1 + 1\cdot 0 & 0\cdot 0 +1\cdot 1\end{matrix}
+    \right)
+    \end{array}\right)\\
+&=&
+    \left(\begin{array}{c|c}
+        \begin{matrix} 1\cdot 5 +0\cdot 2 & 1\cdot 9 +0\cdot 6\\ 0\cdot 5 + 1\cdot 2 & 0\cdot 9 +1\cdot 6\end{matrix}
+        &
+        \begin{matrix} 1\cdot 5 +0\cdot 5 & 1\cdot 3 +0\cdot 8\\ 0\cdot 5 + 1\cdot 5 & 0\cdot 3 +1\cdot 8\end{matrix}
+
+        \\
+        \hline
+        \begin{matrix} 3\cdot 5 +1\cdot 2 & 3\cdot 9 +1\cdot 6\\ 4\cdot 5 + 1\cdot 2 & 4\cdot 9 +1\cdot 6\end{matrix}
+        &
+        \left(
+          \begin{matrix} 20 & 17\\ 25 & 20\end{matrix}
+        \right)
+        +
+        \left(
+          \begin{matrix} 1 & 0\\ 0 & 1\end{matrix}
+        \right)
+        \end{array}\right)\\
+&=&
+  \left(
+    \begin{array}{cc|cc}
+      5 & 9 & 5 & 3 \\
+      2 & 6 & 5 & 8 \\
+    \hline
+      17 & 33 & 21 & 17 \\
+      22 & 42 & 25 & 21 \\
+    \end{array}
+  \right)\\
+\end{eqnarray}$$
+
 ## クラメールの公式 (Cramer's rule)
 これを使えば方程式を解ける．  
 $2$ 行 $2$ 列の次のような方程式の場合  
