@@ -32,11 +32,15 @@ $\mathbf{A} = (a_{ij})$ と数$k$に対して，$kA = (ka_{ij})$ である．
 ## 零行列またはゼロ行列
 各成分が全て $0$ である行列を,零行列またはゼロ行列といい $\mathbf{O}$ で表す．
 
+$m \times n$ 行列 $\mathbf{O}=(a_{ij})$ について，  
+$\mathbf{O} \Leftrightarrow a_{ij}=0 \quad \forall i,j$ 
+
 $$
 \mathbf{O}_{2,3}=\left( \begin{matrix} 0& 0& 0\\ 0& 0& 0\end{matrix} \right),
 \quad
 \mathbf{O}_{3}=\left( \begin{matrix} 0& 0& 0\\ 0& 0& 0\\ 0& 0& 0\end{matrix} \right)
 $$
+
 
 任意のベクトル $\boldsymbol{ x }$ に対して $\boldsymbol{ Ox } = \boldsymbol{ o }$ なので，ゼロ行列が表している写像は，すべてを原点に移す写像
 
