@@ -45,7 +45,7 @@ $$
 任意のベクトル $\boldsymbol{ x }$ に対して $\boldsymbol{ Ox } = \boldsymbol{ o }$ なので，ゼロ行列が表している写像は，すべてを原点に移す写像
 
 ## 1.3.1
-## 行列の積
+## 行列の内積
 $\mathbf{AB = BA}$ とはかぎらない．
 
 一般に，$\mathbf{A}$ を $m \times n$ 行列，$\mathbf{B}$ を $n \times p$ 行列とする．   
@@ -57,6 +57,8 @@ $$ c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj}= a_{i1}b_{1j}+a_{i2}b_{2j}+ \cdot\cdot\c
 $\mathbf{A}$ の列数 $n$ と $\mathbf{B}$ の行数 $n$ なので $\mathbf{A}\mathbf{B}$ の積を定義出来る．
 
 **$\mathbf{B}$ の列数 $p$ と $\mathbf{A}$ の行数 $m$ は一致しないので $\mathbf{BA}$ の積は定義出来ない．**
+
+内積はドット積とも呼ばれる．
 
 ## 単位行列
 単位行列 $\mathbf{I}$ は，掛けても変わらない行列のことで，数の場合の $1$ と同じような役割をになうもの．
